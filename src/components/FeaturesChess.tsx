@@ -1,5 +1,5 @@
-import feature1 from "@/assets/feature-1.gif";
-import feature2 from "@/assets/feature-2.gif";
+import feature1 from "@/assets/feature-1.jpg";
+import feature2 from "@/assets/feature-2.jpg";
 
 const rows = [
   {
