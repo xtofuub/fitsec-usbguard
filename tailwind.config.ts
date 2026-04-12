@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         heading: ["'Instrument Serif'", "serif"],
-        body: ["'Barlow'", "sans-serif"],
+        body: ["'Inter'", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
