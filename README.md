@@ -1,5 +1,9 @@
 # FitSec USBGuard Website
 
+
+https://github.com/user-attachments/assets/d8bd0ccd-2493-47ea-8748-7c8557bda615
+
+
 Marketing site for USBGuard, a hardware-backed USB security solution by FitSec.
 
 The site is built as a single-page experience in Finnish and focuses on:
