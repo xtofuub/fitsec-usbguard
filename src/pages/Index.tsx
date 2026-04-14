@@ -6,6 +6,7 @@ import SolutionSection from "@/components/SolutionSection";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import StatsSection from "@/components/StatsSection";
 import Testimonials from "@/components/Testimonials";
+import FaqSection from "@/components/FaqSection";
 import CtaFooter from "@/components/CtaFooter";
 import ShaderBackground from "@/components/ShaderBackground";
 import { motion } from "motion/react";
@@ -28,6 +29,7 @@ const Index = () => (
       <FeaturesGrid />
       <StatsSection />
       <Testimonials />
+      <FaqSection />
     </main>
 
     <CtaFooter />
