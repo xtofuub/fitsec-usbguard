@@ -1,44 +1,48 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { FileText, ScanLine, Copy, HardDrive } from "lucide-react";
+import {
+  MonitorCog,
+  MousePointerClick,
+  ShieldCheck,
+  SlidersHorizontal,
+} from "lucide-react";
 
 const features = [
   {
-    icon: FileText,
-    title: "File Listing",
-    desc: "Browse and selectively delete files. Choose exactly which files you want to transfer.",
+    icon: ShieldCheck,
+    title: "Total Protection",
+    desc: "USBGuard combines file management, antivirus scanning, BadUSB prevention, and USB Killer protection.",
   },
   {
-    icon: ScanLine,
-    title: "Scanning",
-    desc: "Antivirus scanning and BadUSB prevention. Automatically detects threats.",
+    icon: MousePointerClick,
+    title: "Easy to Use",
+    desc: "The interface clearly guides the user. The main view shows only what is essential, keeping workflows smooth.",
   },
   {
-    icon: Copy,
-    title: "Copying",
-    desc: "Secure file exchange between mass storage devices without any risk.",
+    icon: MonitorCog,
+    title: "Admin Dashboard",
+    desc: "A centralized dashboard keeps devices, statuses, and operations visible in one place without clutter.",
   },
   {
-    icon: HardDrive,
-    title: "Formatting",
-    desc: "Secure mass storage wiping. Ensure no data is left behind.",
+    icon: SlidersHorizontal,
+    title: "Customizable",
+    desc: "The solution can be adapted to different environments without the core concept becoming heavy or complex.",
   },
 ];
 
-const FeaturesGrid = () => {
+const SolutionSection = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
-  const chips = [
-    "BitLocker Support",
-    "Hardware Warranty",
+  const benefits = [
     "Antivirus License",
-    "Automatic Updates",
-    "Device Maintenance",
+    "BadUSB Prevention",
+    "USB Killer Protection",
+    "Hardware Warranty",
   ];
 
   return (
-    <section className="mx-auto w-full max-w-7xl px-6 py-28 lg:px-16" ref={containerRef}>
+    <section id="solution" className="mx-auto w-full max-w-7xl px-6 py-28 lg:px-16" ref={containerRef}>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -46,10 +50,10 @@ const FeaturesGrid = () => {
         className="text-center"
       >
         <div className="mb-8 inline-flex rounded-full liquid-glass px-4 py-1.5 text-xs font-medium uppercase tracking-[0.24em] text-white/80 backdrop-blur-sm">
-          Features
+          Solution
         </div>
         <h2 className="font-heading text-[clamp(3rem,6vw,5.5rem)] italic leading-none tracking-[-0.04em] text-white">
-          Everything you need. <span className="text-white italic drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">Built right in.</span>
+          Practical security. <span className="text-white italic drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">In a single device.</span>
         </h2>
       </motion.div>
 
@@ -78,15 +82,15 @@ const FeaturesGrid = () => {
       </div>
 
       <div className="mt-12 flex flex-wrap justify-center gap-3">
-        {chips.map((chip) => (
+        {benefits.map((benefit) => (
           <motion.span
-            key={chip}
+            key={benefit}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="group rounded-full liquid-glass hover:brightness-110 px-5 py-2.5 text-sm text-white/80 transition-all duration-300 cursor-pointer"
           >
-            {chip}
+            {benefit}
           </motion.span>
         ))}
       </div>
@@ -94,4 +98,4 @@ const FeaturesGrid = () => {
   );
 };
 
-export default FeaturesGrid;
+export default SolutionSection;

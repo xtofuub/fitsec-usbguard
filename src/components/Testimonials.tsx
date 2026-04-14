@@ -3,19 +3,19 @@ import { useRef } from "react";
 
 const testimonials = [
   {
-    quote: "USBGuard toi organisaatioomme selkeän prosessin USB-laitteiden hallintaan. Enää ei tarvitse huolehtia tuntemattomista tikuista.",
+    quote: "USBGuard brought a clear process for managing USB devices to our organization. We no longer have to worry about unknown drives.",
     name: "Mika Korhonen",
-    role: "IT-päällikkö, Teollisuusyritys",
+    role: "IT Manager, Manufacturing",
   },
   {
-    quote: "Kompakti ja helppokäyttöinen. Kosketusnäyttö opastaa selkeästi — loppukäyttäjien ei tarvitse olla teknisiä osaajia.",
+    quote: "Compact and easy to use. The touchscreen guides users clearly - end users don't need to be technical experts.",
     name: "Anna Virtanen",
-    role: "Tietoturvapäällikkö, Logistiikka",
+    role: "Security Manager, Logistics",
   },
   {
-    quote: "BadUSB-hyökkäysten esto ja USB Killer -suojaus samassa paketissa. Tämä on juuri sitä, mitä kriittiset ympäristöt tarvitsevat.",
+    quote: "BadUSB prevention and USB Killer protection in the same package. This is exactly what critical environments need.",
     name: "Jari Nieminen",
-    role: "CISO, Energiayhtiö",
+    role: "CISO, Energy Sector",
   },
 ];
 
@@ -32,10 +32,10 @@ const Testimonials = () => {
         className="text-center mb-24"
       >
         <div className="inline-block liquid-glass rounded-full px-4 py-1.5 text-xs font-medium text-white/80 font-body mb-6 tracking-widest uppercase">
-          Kokemuksia
+          Testimonials
         </div>
         <h2 className="text-5xl md:text-7xl font-heading text-white tracking-tight leading-[0.9]">
-          Älä usko meitä — <span className="text-white/40 italic">kuuntele heitä.</span>
+          Don't just take our word for it - <span className="text-white italic drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">listen to them.</span>
         </h2>
       </motion.div>
 

@@ -1,10 +1,8 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
-/* ── Orbital mesh background ── */
 const OrbitalBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {/* Large color blobs */}
     <motion.div
       className="absolute rounded-full"
       style={{
@@ -39,7 +37,6 @@ const OrbitalBackground = () => (
       transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
     />
 
-    {/* Hex grid — bolder */}
     <svg className="absolute inset-0 w-full h-full opacity-[0.05]">
       <defs>
         <pattern id="hex-cta" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(2)">
@@ -60,7 +57,6 @@ const OrbitalBackground = () => (
       <rect width="100%" height="100%" fill="url(#hex-cta)" />
     </svg>
 
-    {/* Large orbiting rings with colored borders */}
     {[
       { size: 300, color: "6,182,212", dur: 25, dir: 1 },
       { size: 480, color: "139,92,246", dur: 35, dir: -1 },
@@ -81,7 +77,6 @@ const OrbitalBackground = () => (
         animate={{ rotate: ring.dir > 0 ? [0, 360] : [360, 0] }}
         transition={{ duration: ring.dur, repeat: Infinity, ease: "linear" }}
       >
-        {/* Node on ring */}
         <motion.div
           className="absolute rounded-full"
           style={{
@@ -96,7 +91,6 @@ const OrbitalBackground = () => (
           animate={{ opacity: [0.4, 1, 0.4] }}
           transition={{ duration: 2, repeat: Infinity }}
         />
-        {/* Opposite node */}
         <motion.div
           className="absolute rounded-full"
           style={{
@@ -114,7 +108,6 @@ const OrbitalBackground = () => (
       </motion.div>
     ))}
 
-    {/* Center glow pulse */}
     <motion.div
       className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
       style={{
@@ -133,10 +126,7 @@ const CtaFooter = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="yhteystiedot" className="relative overflow-hidden mt-24" ref={ref}>
-      <OrbitalBackground />
-      <div className="absolute inset-0 bg-[#050505]/40 backdrop-blur-[2px] z-0" />
-
+    <section id="contact" className="relative overflow-hidden mt-24" ref={ref}>
       <div className="relative z-10 flex flex-col items-center text-center py-40 px-6 max-w-5xl mx-auto w-full">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -145,9 +135,9 @@ const CtaFooter = () => {
           transition={{ duration: 1.2, ease: [0.32, 0.72, 0, 1] }}
           className="text-6xl md:text-8xl font-heading text-white leading-[0.9] tracking-tight max-w-4xl"
         >
-          Haluatko suojata <span className="text-white/40 italic">yrityksesi varat?</span>
+          Want to protect your <span className="text-white italic drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">company's assets?</span>
         </motion.h2>
-        
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -155,9 +145,9 @@ const CtaFooter = () => {
           transition={{ duration: 1, delay: 0.2, ease: [0.32, 0.72, 0, 1] }}
           className="mt-8 text-lg md:text-xl text-white/60 font-light leading-relaxed max-w-2xl"
         >
-          Ota meihin yhteyttä aloittaaksesi. Järjestämme alkukeskustelun ja räätälöimme ratkaisun tarpeidenne mukaan.
+          Contact us to get started. We will arrange an initial meeting and tailor a solution to your needs.
         </motion.p>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -191,10 +181,10 @@ const CtaFooter = () => {
           className="mt-40 pt-8 border-t border-white/10 w-full flex flex-col md:flex-row items-center justify-between gap-6"
         >
           <span className="text-white/40 text-xs font-body tracking-wide">
-            © 2026 FitSec. Finnish Threat Intelligence Feed Provider since 2009.
+            (C) 2026 FitSec. Finnish Threat Intelligence Feed Provider since 2009.
           </span>
           <div className="flex items-center gap-8">
-            {["Tietosuoja", "Ehdot", "Yhteystiedot"].map((link) => (
+            {["Privacy", "Terms", "Contact"].map((link) => (
               <a key={link} href="#" className="text-white/40 text-xs font-body hover:text-white transition-colors uppercase tracking-widest">
                 {link}
               </a>

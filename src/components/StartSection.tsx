@@ -2,10 +2,8 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-/* ── Shield radar background ── */
 const ShieldRadarBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {/* Gradient mesh */}
     <motion.div
       className="absolute rounded-full"
       style={{
@@ -23,7 +21,6 @@ const ShieldRadarBackground = () => (
       transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
     />
 
-    {/* Radar sweep */}
     <motion.div
       className="absolute"
       style={{
@@ -40,7 +37,6 @@ const ShieldRadarBackground = () => (
       transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
     />
 
-    {/* Concentric rings — more visible with color */}
     {[150, 250, 350].map((size, i) => (
       <motion.div
         key={i}
@@ -67,7 +63,6 @@ const ShieldRadarBackground = () => (
       />
     ))}
 
-    {/* Blips on radar */}
     {[
       { angle: 45, dist: 120, delay: 0 },
       { angle: 150, dist: 200, delay: 2 },
@@ -107,7 +102,7 @@ const StartSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="palvelut" className="relative py-32 px-6 lg:px-16 max-w-5xl mx-auto w-full" ref={ref}>
+    <section id="services" className="relative py-32 px-6 lg:px-16 max-w-5xl mx-auto w-full" ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -122,9 +117,9 @@ const StartSection = () => {
           transition={{ duration: 1, delay: 0.2, ease: [0.32, 0.72, 0, 1] }}
           className="inline-block liquid-glass rounded-full px-4 py-1.5 text-xs font-medium text-white/80 font-body mb-8 tracking-widest uppercase"
         >
-          Kokonaispalvelu
+          Complete Service
         </motion.div>
-        
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -132,9 +127,9 @@ const StartSection = () => {
           transition={{ duration: 1.2, delay: 0.3, ease: [0.32, 0.72, 0, 1] }}
           className="text-5xl md:text-7xl font-heading text-white tracking-tight leading-[0.95] max-w-3xl"
         >
-          Sinä keskityt työhösi. <span className="text-white/40 italic">Me hoidamme tietoturvan.</span>
+          You focus on your work. <span className="text-white italic drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">We handle the security.</span>
         </motion.h2>
-        
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -142,11 +137,11 @@ const StartSection = () => {
           transition={{ duration: 1, delay: 0.5, ease: [0.32, 0.72, 0, 1] }}
           className="mt-8 text-lg md:text-xl text-white/60 font-light leading-relaxed max-w-2xl"
         >
-          USBGuard on vuosilisenssipohjainen kokonaispalvelu. Laitteet, ylläpito, päivitykset, antiviruslisenssi ja laitetakuu — kaikki sisältyy.
+          USBGuard is an annual license-based complete service. Devices, maintenance, updates, antivirus licenses, and device warranty - everything is included.
         </motion.p>
-        
+
         <motion.a
-          href="#yhteystiedot"
+          href="#contact"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -155,7 +150,7 @@ const StartSection = () => {
           whileTap={{ scale: 0.95 }}
           className="mt-12 group relative liquid-glass rounded-full pl-8 pr-2 py-2 text-base font-medium text-white flex items-center gap-6 transition-all hover:bg-white/5"
         >
-          <span>Ota yhteyttä</span>
+          <span>Contact Us</span>
           <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors duration-500">
             <ArrowUpRight size={20} className="group-hover:translate-x-[1px] group-hover:-translate-y-[1px] transition-transform duration-500" />
           </div>
